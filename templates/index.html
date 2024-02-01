@@ -146,7 +146,7 @@
 							<input type="number" class="form-control" id="Day_disbursed" name="Day_disbursed" value="{{ form_values[16] }}" step="any" required>
 						</div>
 						<div class="col-sm-6">
-							<label for="Day_hosted">Day_hosted</label>
+							<label for="Day_hosted">Day_disbursed</label>
 							<input type="number" class="form-control" id="Day_hosted" name="Day_hosted" value="{{ form_values[17] }}" step="any" required>
 						</div>
 						<div class="col-sm-6">
@@ -256,7 +256,7 @@
 							  <div class="row">
 								<div class="col-sm-8">
 								  <div class="numbers">
-									<p class="text-sm mb-0 text-capitalize font-weight-bold">Prediction Result</p>
+									<p class="text-sm mb-0 text-capitalize font-weight-bold">Prediction Score</p>
 									<h5 class="font-weight-bolder mb-0">
 									  <span class="text-success text-sm font-weight-bolder"><strong style="color:red">{{ result }}</strong></span>
 									</h5>
@@ -270,6 +270,34 @@
 							  </div>
 							</div>
 						  </div>
+						  <!-- Prediction Result -->
+						<div class="card col-sm-10">
+							<div class="card-body p-3">
+								<div class="row">
+									<div class="col-sm-8">
+										<div class="numbers">
+											<p class="text-sm mb-0 text-capitalize font-weight-bold">Prediction Result</p>
+											<h5 class="font-weight-bolder mb-0">
+												{% if result > 0.5 %}
+												<span class="text-danger text-sm font-weight-bolder">
+													<strong style="color:red">Defaulter</strong>
+												</span>
+												{% else %}
+												<span class="text-success text-sm font-weight-bolder">
+													<strong style="color:green">Non Defaulter</strong>
+												</span>
+												{% endif %}
+											</h5>
+										</div>
+									</div>
+									<div class="col-4 text-end">
+										<div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+											<i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					  </div>
 				     </div>
 					</div>
