@@ -278,6 +278,7 @@
 										<div class="numbers">
 											<p class="text-sm mb-0 text-capitalize font-weight-bold">Prediction Result</p>
 											<h5 class="font-weight-bolder mb-0">
+											{% if result %}
 												{% if result > 0.5 %}
 												<span class="text-danger text-sm font-weight-bolder">
 													<strong style="color:red">Defaulter</strong>
@@ -287,6 +288,7 @@
 													<strong style="color:green">Non Defaulter</strong>
 												</span>
 												{% endif %}
+											{% endif %}
 											</h5>
 										</div>
 									</div>
